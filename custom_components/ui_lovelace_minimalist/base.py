@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
+import json
 import logging
 import os
 import pathlib
@@ -85,7 +86,7 @@ class UlmConfiguration:
 
     def to_json(self) -> str:
         """Return a json string."""
-        return asdict(self)
+        return json.dumps(asdict(self))
 
     def update_from_dict(self, data: dict) -> None:
         """Set attributes from dicts."""
